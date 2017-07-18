@@ -3,16 +3,16 @@ import { CanActivate } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AdminAuthGuard implements CanActivate {
 
     constructor(private router: Router) { }
 
     canActivate() {
-        if (localStorage.getItem('isLoggedin')) {
-            return true;
-        }
+        if (localStorage.getItem('isLoggedIn')) {
+         return true;
+         }
 
-        this.router.navigate(['/login']);
-        return false;
+         this.router.navigate(['/login']);
+         return false;
     }
 }

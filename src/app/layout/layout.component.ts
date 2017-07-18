@@ -8,7 +8,11 @@ import { Router } from '@angular/router';
 })
 export class LayoutComponent implements OnInit {
 
-    constructor(public router: Router) { }
+    isAuthenticated: boolean;
+
+    constructor(public router: Router) {
+        this.isAuthenticated = false;
+    }
 
     ngOnInit() {
         if (this.router.url === '/') {

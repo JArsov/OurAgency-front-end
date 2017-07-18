@@ -14,16 +14,22 @@ export class DashboardComponent implements OnInit {
     constructor() {
         this.sliders.push({
             imagePath: 'assets/images/slider1.jpg',
-            label: 'First slide label',
-            text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+            label: 'Куќа на Водно!',
+            text: 'Само оваа недела!!! Куќа на водно за само ',
+            oldPrice: 67000,
+            newPrice: 60000
         }, {
             imagePath: 'assets/images/slider2.jpg',
-            label: 'Second slide label',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+            label: 'Стан во центар',
+            text: 'Се продава стан во центар со одличен поглед кон ...',
+            oldPrice: 55000,
+            newPrice: 51999
         }, {
             imagePath: 'assets/images/slider3.jpg',
-            label: 'Third slide label',
-            text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
+            label: 'Деловен простоп во Илинден',
+            text: 'Се издава деловен простор во населба Илинден',
+            oldPrice: 230,
+            newPrice: 200
         });
 
         this.alerts.push({
@@ -43,8 +49,7 @@ export class DashboardComponent implements OnInit {
         });
     }
 
-    ngOnInit() {
-    }
+    ngOnInit() {}
 
     public closeAlert(alert: any) {
         const index: number = this.alerts.indexOf(alert);

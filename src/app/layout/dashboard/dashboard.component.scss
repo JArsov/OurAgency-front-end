@@ -1,3 +1,20 @@
 .font-color {
-    color: white;
+    color: #ffff0c;
+    font-weight:bold;
+}
+
+.carousel-width {
+    height:400px;
+}
+
+.img-table {
+    width:100%;
+}
+
+table tbody tr td, table thead th {
+    vertical-align:middle;
+}
+
+table tbody tr, table thead {
+    height: 110px;
 }

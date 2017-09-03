@@ -1,5 +1,5 @@
 {
-    "dashboard": "Почетна",
+    "Home": "Почетна",
     "charts":"Графикони",
     "tables": "Табели",
     "forms": "Форми",
@@ -11,5 +11,11 @@
     "blankpage": "Празна страница",
     "moretheme": "Повеќе теми",
     "downloadNow": "Сними",
-    "language": "Јазик"
+    "language": "Јазик",
+    "Details": "Детали",
+    "Add new real estate": "Додади нова недвижнина",
+    "Log out": "Одјави се",
+    "About us": "За нас",
+    "Contact": "Контакт",
+    "Почетна страница": "Home page"
 }

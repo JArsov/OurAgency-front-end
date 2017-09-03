@@ -1,0 +1,180 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <h3 class="card-header primary-color white-text title-color2" *ngIf="realEstate">
+                Додади нова недвижност
+            </h3>
+            <div class="card-block">
+                <form>
+                <table class="table">
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <label><input name="type" type="radio" value="kukja"
+                                              [(ngModel)]="realEstate.type" name="kukja"/>&nbsp; Куќа</label>
+                                <label><input name="type" type="radio" value="stan"
+                                              [(ngModel)]="realEstate.type" name="stan"/>&nbsp; Стан</label>
+                            </td>
+                            <td>
+                                <label id="deloven"><input name="type" type="radio" value="deloven"
+                                                           [(ngModel)]="realEstate.type" name="deloven"/>&nbsp; Деловен простор</label>
+                                <label><input name="type" type="radio" value="ostanato"
+                                              [(ngModel)]="realEstate.type" name="ostanato"/>&nbsp; Останато</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Наслов:
+                            </td>
+                            <td><input [(ngModel)]="realEstate.title" name="title"/></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Опис:
+                            </td>
+                            <td><textarea rows="4" cols="22" [(ngModel)]="realEstate.description" name="description"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Локација (Град):
+                            </td>
+                            <td><input [(ngModel)]="realEstate.location" name="location"/></td>
+                        </tr>
+                        <tr *ngIf="realEstate.type=='kukja' || realEstate.type=='stan'">
+                            <td class="text-right">
+                                Број на соби:
+                            </td>
+                            <td><input [(ngModel)]="realEstate.numberOfRooms" name="numberOfRooms"/></td>
+                        </tr>
+                        <tr *ngIf="realEstate.type=='kukja' || realEstate.type=='stan'">
+                            <td class="text-right">
+                                Број на спални соби:
+                            </td>
+                            <td><input [(ngModel)]="realEstate.numberOfBedrooms" name="numberOfBedrooms"/></td>
+                        </tr>
+                        <tr *ngIf="realEstate.type=='kukja' || realEstate.type=='stan'">
+                            <td class="text-right">
+                                Број на купатила:
+                            </td>
+                            <td><input [(ngModel)]="realEstate.numberOfBathrooms" name="numberOfBathrooms"/></td>
+                        </tr>
+                        <tr *ngIf="realEstate.location == 'Skopje' || realEstate.location == 'Скопје'">
+                            <td class="text-right">
+                                Населба:
+                            </td>
+                            <td><input [(ngModel)]="realEstate.settlement" name="settlement"/></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Површина:
+                            </td>
+                            <td><input [(ngModel)]="realEstate.surface" name="surface"/> m<sup>2</sup></td>
+                        </tr>
+                        <tr *ngIf="realEstate.type != 'kukja'">
+                            <td class="text-right">
+                                Кат:
+                            </td>
+                            <td><input type='number' [(ngModel)]="realEstate.floor" name="floor"/></td>
+                        </tr>
+                        <tr *ngIf="realEstate.type != 'kukja'">
+                            <td class="text-right">
+                                Лифт:
+                            </td>
+                            <td style="padding-left:95px;">
+                                <input type="checkbox" [(ngModel)]="realEstate.elevator" name="elevator"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Наместен<span *ngIf="realEstate.type == 'kukja'">а</span>:
+                            </td>
+                            <td style="padding-left:80px;">
+                                <select [(ngModel)]="realEstate.interior" name="interior">
+                                    <option [ngValue]="da">Да</option>
+                                    <option [ngValue]="ne">Не</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Тераса:
+                            </td>
+                            <td style="padding-left:80px;">
+                                <select [(ngModel)]="realEstate.terrace" name="terrace">
+                                    <option [ngValue]="da">Да</option>
+                                    <option [ngValue]="ne">Не</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Клима уред:
+                            </td>
+                            <td style="padding-left:95px;">
+                                <input type="checkbox" [(ngModel)]="realEstate.airCondition" name="airCondition"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Сопствено греење:
+                            </td>
+                            <td style="padding-left:95px;">
+                                <input type="checkbox" [(ngModel)]="realEstate.ownHeating" name="ownHeating"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Интернет:
+                            </td>
+                            <td style="padding-left:95px;">
+                                <input type="checkbox" [(ngModel)]="realEstate.internet" name="internet"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Кабелска телевизија:
+                            </td>
+                            <td style="padding-left:95px;">
+                                <input type="checkbox" [(ngModel)]="realEstate.cableTV" name="cableTV"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Нова градба:
+                            </td>
+                            <td style="padding-left:95px;">
+                                <input type="checkbox" [(ngModel)]="realEstate.newBuilding" name="newBuilding"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Сопствен паркинг:
+                            </td>
+                            <td style="padding-left:95px;">
+                                <input type="checkbox" [(ngModel)]="realEstate.parking" name="parking"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                Слики:
+                            </td>
+                            <td>
+                                <input type="file" placeholder="Одбери слики..." multiple/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                                <input type="button" class="btn btn-primary" type="submit"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

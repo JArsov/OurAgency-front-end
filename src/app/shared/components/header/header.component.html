@@ -3,11 +3,36 @@
         <button class="navbar-toggler navbar-toggler-right" (click)="toggleSidebar()">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="javascript:void(0)">Our Agency</a>
+        <a class="navbar-brand" href="javascript:void(0)" style="background-color:white;color:black;padding-left:10px;padding-right:10px;" [routerLink]="['/dashboard']">
+            Our Agency&nbsp;
+            <img src="../../../assets/images/company_logo.jpg" class="img-responsive" style="width:20px;height:20px;"/>
+        </a>
         <div class="collapse navbar-collapse">
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search...">
             </form>
+            <ul class="navbar-nav mt-2 mt-md-0">
+                <li class="nav-item active" id="first">
+                    <a class="nav-link" href="javascript:void(0)" (click)="changeLang('en')">EN</a>
+                </li>
+                <li class="nav-item" id="second">
+                    <a class="nav-link" href="javascript:void(0)" (click)="changeLang('mk')">MK</a>
+                </li>
+                <li class="nav-item" id="third">
+                    <a class="nav-link" href="javascript:void(0)" (click)="changeLang('fr')">FR</a>
+                </li>
+                <!--<li class="nav-item dropdown" ngbDropdown>
+                    <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
+                        <i class="fa fa-language"></i> {{ 'language' | translate }} <b class="caret"></b>
+                    </a>
+                    &lt;!&ndash; TODO fix img url's &ndash;&gt;
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('en')"><span style="width:50%;"> English &nbsp; </span></a>
+                        <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('fr')"><span style="width:50%;"> French &nbsp; </span></a>
+                        <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('mk')"><span style="width:50%;"> Macedonian &nbsp; </span></a>
+                    </div>
+                </li>-->
+            </ul>
             <ul class="navbar-nav ml-auto mt-2 mt-md-0" *ngIf="isAuthenticated">
                 <li class="nav-item dropdown" ngbDropdown>
                     <!-- <div class="dropdown"> -->
@@ -55,24 +80,13 @@
                 </li>
                 <li class="nav-item dropdown" ngbDropdown>
                     <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
-                        <i class="fa fa-language"></i> {{ 'language' | translate }} <b class="caret"></b>
-                    </a>
-                    <!-- TODO fix img url's -->
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('en')">English &nbsp; <img src="../../../../assets/icons/uk.png"/></a>
-                        <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('fr')">French &nbsp; <img src="../../../../assets/icons/fr.png"/></a>
-                        <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('mk')">Macedonian &nbsp; <img src="../../../../assets/icons/mk.png"/></a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown" ngbDropdown>
-                    <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
                         <i class="fa fa-user"></i> Admin <b class="caret"></b>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        <a class="dropdown-item" [routerLink]="['/dashboard']" (click)="onLoggedout()"><i class="fa fa-fw fa-sign-out"></i> Log Out</a>
+                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/dashboard']"><i class="fa fa-tachometer"></i> {{ 'Home' | translate }}</a>
+                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/admin-details']"><i class="fa fa-user-circle-o"></i> {{ 'Details' | translate }}</a>
+                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/new']"><i class="fa fa-fw fa-envelope"></i> {{ 'Add new real estate' | translate }}</a>
+                        <a class="dropdown-item" [routerLink]="['/dashboard']" (click)="onLoggedout()"><i class="fa fa-fw fa-sign-out"></i> {{ 'Log out' | translate }}</a>
                     </div>
                 </li>
             </ul>

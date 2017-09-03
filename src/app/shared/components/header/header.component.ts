@@ -35,10 +35,23 @@ export class HeaderComponent implements OnInit {
 
     onLoggedout() {
         localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('firstTime');
         this.isAuthenticated = false;
     }
 
     changeLang(language: string) {
+        document.getElementById('first').classList.remove('active');
+        document.getElementById('second').classList.remove('active');
+        document.getElementById('third').classList.remove('active');
+        if(language == 'en') {
+            document.getElementById('first').classList.add('active');
+        }
+        else if(language == 'mk') {
+            document.getElementById('second').classList.add('active');
+        }
+        else {
+            document.getElementById('third').classList.add('active');
+        }
         this.translate.use(language);
     }
 }

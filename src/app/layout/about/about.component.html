@@ -1,0 +1,103 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                За нас
+            </div>
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-6">
+                        OurAgency е најдобра агенција за недвижности во Република Македонија. Основана е далечната 1972,
+                        со
+                        веќе 45 годишно работно
+                        искуство, претставуваме лидер во Македонија и регионот.
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <a alt="Our Agency" [routerLink]="['/dashboard']"><img
+                            src="../../../assets/images/company_logo.jpg"/></a>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header inverse-color1">
+                                Наши недвижности
+                            </div>
+                            <div class="card-block">
+                                <canvas baseChart height="180px" [data]="doughnutChartData"
+                                        [labels]="doughnutChartLabels"
+                                        [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"
+                                        (chartClick)="chartClicked($event)">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header inverse-color2">
+                                Позитивен раст на годишно ниво
+                            </div>
+                            <div class="card-block">
+                                <canvas height="180px" baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                        [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"
+                                        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6">
+                        <app-stat [bgClass]="'card-primary'" [icon]="'fa-comments'" [count]="26"
+                                  [label]="'Нови недвижности овој месец'"></app-stat>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <app-stat [bgClass]="'card-info'" [icon]="'fa-tasks'" [count]="12"
+                                  [label]="'Нови клиенти'"></app-stat>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <app-stat [bgClass]="'card-success'" [icon]="'fa-shopping-cart'" [count]="271"
+                                  [label]="'Потпишани договори'"></app-stat>
+                    </div>
+                    <div class="col-xl-3 col-lg-6">
+                        <app-stat [bgClass]="'card-danger'" [icon]="'fa-support'" [count]="13"
+                                  [label]="'Соработки со други компании'"></app-stat>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header inverse-color3">
+                                Наши соработници
+                            </div>
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a class="card-link" href="#">Sinalco <img
+                                            class="img-responsive img-hover colaborator"
+                                            src="assets/images/sinalco.png"/></a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="card-link" href="#">Алкалоид <img
+                                            class="img-responsive img-hover colaborator"
+                                            src="assets/images/alkaloid.png"/></a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="card-link" href="#">Пивара <img
+                                            class="img-responsive img-hover colaborator"
+                                            src="assets/images/pivara.jpg"/></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

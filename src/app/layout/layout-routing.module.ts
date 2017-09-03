@@ -17,7 +17,34 @@ const routes: Routes = [
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
             {
                 path: 'admin',
-                loadChildren: './admin/admin.module#AdminModule'
+                loadChildren: './admin/admin.module#AdminModule',
+                canActivate: [AdminAuthGuard]
+            },
+            {
+                path: 'admin-details',
+                loadChildren: './admin-details/admin-details.module#AdminDetailsModule',
+                canActivate: [AdminAuthGuard]
+            },
+            {
+                path: 'edit/:id',
+                loadChildren: './edit-admin-details/edit-admin-details.module#EditAdminDetailsModule',
+                canActivate: [AdminAuthGuard]
+            },
+            {
+                path: 'details/:id',
+                loadChildren: './details/details.module#DetailsModule'
+            },
+            {
+                path: 'new',
+                loadChildren: './new/new.module#NewModule'
+            },
+            {
+                path: 'about',
+                loadChildren: './about/about.module#AboutModule'
+            },
+            {
+                path: 'contact',
+                loadChildren: './contact/contact.module#ContactModule'
             }
         ]
     }

@@ -13,17 +13,19 @@ export class ChartsComponent implements OnInit {
         scaleShowVerticalLines: false,
         responsive: true
     };
-    public barChartLabels: string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+    public barChartLabels: string[] = ['2011', '2012', '2013', '2014', '2015', '2016', '2017'];
     public barChartType: string = 'bar';
     public barChartLegend: boolean = true;
 
     public barChartData: any[] = [
-        { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-        { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+        { data: [2, 6, 10, 22, 40, 47, 55], label: 'Куќи' },
+        { data: [3, 5, 8, 14, 27, 33, 40], label: 'Станеви' },
+        { data: [7, 13, 17, 24, 50, 58, 70], label: 'Деловен простор' },
+        { data: [4, 8, 15, 19, 24, 28, 33], label: 'Останато' }
     ];
     // Doughnut
-    public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-    public doughnutChartData: number[] = [350, 450, 100];
+    public doughnutChartLabels: string[] = ['Станеви', 'Куќи', 'Деловен простор', 'Останато'];
+    public doughnutChartData: number[] = [55, 40, 70, 33];
     public doughnutChartType: string = 'doughnut';
     // Radar
     public radarChartLabels: string[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];

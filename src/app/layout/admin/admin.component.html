@@ -1,3 +1,8 @@
-<p>
-  Admin works
-</p>
+<div class="row">
+    <div class="col-md-6">
+        Admin home page
+    </div>
+    <div class="alert alert-success" role="alert" id="alert" *ngIf="showAlertMessage && firstTimeVisited">
+        <strong>Welcome back!</strong> You have signed in successfully!
+    </div>
+</div>

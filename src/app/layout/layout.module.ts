@@ -7,6 +7,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { HeaderComponent, SidebarComponent } from '../shared';
 import { AdminAuthGuard } from "../shared/guards/admin-auth.guard";
+import { AlertService } from "../shared/services/AlertService";
 
 @NgModule({
     imports: [
@@ -16,12 +17,13 @@ import { AdminAuthGuard } from "../shared/guards/admin-auth.guard";
         TranslateModule
     ],
     providers: [
-      AdminAuthGuard
+      AdminAuthGuard,
+        AlertService
     ],
     declarations: [
         LayoutComponent,
         HeaderComponent,
-        SidebarComponent,
+        SidebarComponent
     ]
 })
 export class LayoutModule { }

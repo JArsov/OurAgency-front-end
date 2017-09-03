@@ -1,5 +1,5 @@
 {
-    "dashboard": "Dashboard",
+    "Home": "Home",
     "charts": "Charts",
     "tables": "Tables",
     "forms": "Forms",
@@ -11,5 +11,11 @@
     "blankpage": "Blank Page",
     "moretheme": "More Themes",
     "downloadNow": "Download Now",
-    "language": "Language"
+    "language": "Language",
+    "Details": "Details",
+    "Add new real estate": "Add new real estate",
+    "Log out": "Log out",
+    "About us": "About us",
+    "Contact": "Contact",
+    "Home page": "Home page"
 }

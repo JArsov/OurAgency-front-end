@@ -1,0 +1,229 @@
+<div class="card">
+    <h3 class="card-header primary-color white-text title-color2" *ngIf="realEstate">
+        {{realEstate.title}}
+        <button class="pull-right btn btn-default btn-hover" (click)="returnBack()">
+            <i class="fa fa-reply-all" aria-hidden></i>&nbsp;Назад
+        </button>
+    </h3>
+    <div class="card-block">
+        <div class="row">
+            <div class="col-md-4">
+                <h5 class="title-color">Основни информации<hr/></h5>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table-hover table-striped">
+                            <tbody>
+                            <tr *ngIf="realEstate.lastChange">
+                                <td>
+                                    Последна промена:
+                                </td>
+                                <td>
+                                    {{realEstate.lastChange}}
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.settlement">
+                                <td>
+                                    Населба:
+                                </td>
+                                <td>
+                                    {{realEstate.settlement}}
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.surface">
+                                <td>
+                                    Површина:
+                                </td>
+                                <td>
+                                    {{realEstate.surface}}&nbsp;km<sup>2</sup>
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.numberOfRooms">
+                                <td>
+                                    Број на соби:
+                                </td>
+                                <td>
+                                    {{realEstate.numberOfRooms}}
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.numberOfBedRooms">
+                                <td>
+                                    Број на спални соби:
+                                </td>
+                                <td>
+                                    {{realEstate.numberOfBedRooms}}
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.floor">
+                                <td>
+                                    Кат:
+                                </td>
+                                <td>
+                                    {{realEstate.floor}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Лифт:
+                                </td>
+                                <td *ngIf="realEstate.elevator">
+                                    <i class="fa fa-check"></i>
+                                </td>
+                                <td *ngIf="!realEstate.elevator">
+                                    <i class="fa fa-times"></i>
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.interior">
+                                <td>
+                                    Наместен:
+                                </td>
+                                <td>
+                                    {{realEstate.interior}}
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.numberOfBathrooms">
+                                <td>
+                                    Број на купатила:
+                                </td>
+                                <td>
+                                    {{realEstate.numberOfBathrooms}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Тераса:
+                                </td>
+                                <td *ngIf="realEstate.terrace">
+                                    <i class="fa fa-check"></i>
+                                </td>
+                                <td *ngIf="!realEstate.terrace">
+                                    <i class="fa fa-times"></i>
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.newBuilding">
+                                <td>
+                                    Година на градба:
+                                </td>
+                                <td>
+                                    {{realEstate.newBuilding}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Сопствено парно:
+                                </td>
+                                <td *ngIf="realEstate.ownHeating">
+                                    <i class="fa fa-check"></i>
+                                </td>
+                                <td *ngIf="!realEstate.ownHeating">
+                                    <i class="fa fa-times"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Клима уред:
+                                </td>
+                                <td *ngIf="realEstate.airCondition">
+                                    <i class="fa fa-check"></i>
+                                </td>
+                                <td *ngIf="!realEstate.airCondition">
+                                    <i class="fa fa-times"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Интернет:
+                                </td>
+                                <td *ngIf="realEstate.internet">
+                                    <i class="fa fa-check"></i>
+                                </td>
+                                <td *ngIf="!realEstate.internet">
+                                    <i class="fa fa-times"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Кабелска телевизија:
+                                </td>
+                                <td *ngIf="realEstate.cableTV">
+                                    <i class="fa fa-check"></i>
+                                </td>
+                                <td *ngIf="!realEstate.cableTV">
+                                    <i class="fa fa-times"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Сопствен паркинг:
+                                </td>
+                                <td *ngIf="realEstate.parking">
+                                    <i class="fa fa-check"></i>
+                                </td>
+                                <td *ngIf="!realEstate.parking">
+                                    <i class="fa fa-times"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><br/>
+                <h5 class="title-color">Финансиски информации<hr/></h5>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table-hover table-striped">
+                            <tbody>
+                            <tr *ngIf="realEstate.price">
+                                <td>
+                                    Цена:
+                                </td>
+                                <td class="text-right">
+                                    {{realEstate.price}}
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.oldPrice">
+                                <td>
+                                    Цена:
+                                </td>
+                                <td class="text-right">
+                                    <del>{{realEstate.oldPrice}}$</del>&nbsp;{{realEstate.newPrice}}$
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.deposit">
+                                <td>
+                                    Депозит:
+                                </td>
+                                <td class="text-right">
+                                    {{realEstate.deposit}}
+                                </td>
+                            </tr>
+                            <tr *ngIf="realEstate.comission">
+                                <td>
+                                    Учество:
+                                </td>
+                                <td>
+                                    {{realEstate.comission}}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><br/>
+                <h5 class="title-color">Краток опис<hr/></h5>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="estate-description">
+                            {{realEstate.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <img [src]="imgUrl" class="img-responsive img-thumbnail height-class2"/>
+                <div class="row" id="padding">
+                    <div class="col-md-3" *ngFor="let url of imgUrls;let i = index" [attr.data-value]="i">
+                        <img [src]="url" class="img-responsive img-thumbnail height-class" (click)="changeImage(i)"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

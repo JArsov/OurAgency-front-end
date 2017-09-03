@@ -1,0 +1,67 @@
+/*img {
+    max-width: 400px;
+    max-height: 300px;
+}*/
+
+table tr td {
+    font-size:0.9em;
+    padding-left:10px;
+}
+
+table tr{
+    border-bottom:1px #d87d2d dotted;
+}
+
+table tr:last-child {
+    border:0;
+}
+
+#padding {
+    margin-top:10px;
+}
+
+.height-class {
+    height:100px;
+    width:100%;
+}
+
+.height-class:hover {
+    cursor: pointer;
+}
+
+.title-color {
+    color:#d87d2d;
+}
+
+.title-color2 {
+    color:#b26420;
+}
+
+hr {
+    margin-top:0;
+    padding-top:0;
+}
+
+table {
+    width: 100%;
+    border: 0.5px #d87d2d dotted;
+    cursor:pointer;
+}
+
+table tr td:first-child {
+    font-weight:bold;
+}
+
+.btn-hover:hover {
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.height-class2 {
+    height:350px;
+    width:100%;
+}
+
+.estate-description {
+    font-size:0.8em;
+}

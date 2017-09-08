@@ -13,7 +13,7 @@ export class DashboardService implements OnInit{
     realEstates: any[];
 
     constructor(private http: Http) {
-        /*this.realEstates = [
+        this.realEstates = [
             {
                 code : "0ax5D",
                 title : "Издавам наместен стан во Тафталиџе",
@@ -21,7 +21,7 @@ export class DashboardService implements OnInit{
                 ' и реновирано купатило. Цена: 200 евра.',
                 location: "Скопје",
                 settlement: 'Тафталиџе',
-                imagePath: 'assets/images/slider1.jpg',
+                imagePath: 'assets/images/stan.jpg',
                 imagePaths: [
                     'assets/images/stan.jpg',
                     'assets/images/stan_dnevna.jpg',
@@ -47,7 +47,7 @@ export class DashboardService implements OnInit{
                 'но може да се користи и за други намени. Цена: 85 евра',
                 location: "Скопје",
                 settlement: 'Центар',
-                imagePath: 'assets/images/slider2.jpg',
+                imagePath: 'assets/images/deloven1.jpg',
                 imagePaths: [
                     'assets/images/deloven2.jpg',
                     'assets/images/deloven1.jpg',
@@ -64,7 +64,7 @@ export class DashboardService implements OnInit{
                 description: 'Се продава нова, невселувана куќа во Велес, на 50 метри од автобуската станица. На одлична локација,' +
                 ' на два спрата. Површината на куќата изнесува 300 m2. Цена 30000 евра, не е фиксна.',
                 location: "Велес",
-                imagePath: 'assets/images/slider3.jpg',
+                imagePath: 'assets/images/house.jpg',
                 imagePaths: [
                     'assets/images/house.jpg',
                     'assets/images/detska.jpg',
@@ -82,15 +82,16 @@ export class DashboardService implements OnInit{
                 floor: 1,
                 price: 30000
             }
-        ];*/
+        ];
 
 
     }
 
-    getAllRealEstates(): Observable<any[]> {
-        return this.http.get(this.realEstatesUrl)
+    getAllRealEstates(): any[] {
+        return this.realEstates;
+        /*this.http.get(this.realEstatesUrl)
             .map(this.extractData)
-            .catch(this.handleError);
+            .catch(this.handleError);*/
     }
 
     private extractData(res : Response) {

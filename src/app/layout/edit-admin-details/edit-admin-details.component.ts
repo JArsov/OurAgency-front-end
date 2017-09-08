@@ -19,10 +19,10 @@ export class EditAdminDetailsComponent implements OnInit {
     constructor(private route: ActivatedRoute,
                 private dashboardService: DashboardService,
                 private router: Router) {
-        this.dashboardService.getAllRealEstates()
-            .subscribe(
+        this.realEstates = this.dashboardService.getAllRealEstates();
+            /*.subscribe(
                 result => this.realEstates = result
-            );
+            );*/
         this.imgUrls = [
             'assets/images/house.jpg',
             'assets/images/detska.jpg',
@@ -49,12 +49,6 @@ export class EditAdminDetailsComponent implements OnInit {
         this.realEstate.lastChange = Date.now();
         this.dashboardService.saveRealEstate(this.realEstate);
         //this.router.navigate(['/dashboard']);
-    }
-
-    deleteRealEstate() {
-        console.log(this.realEstate.code);
-        this.dashboardService.deleteRealEstate(this.realEstate);
-        this.router.navigate(['/admin-details']);
     }
 
     changeImage(index) {

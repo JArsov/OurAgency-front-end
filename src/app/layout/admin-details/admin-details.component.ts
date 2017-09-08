@@ -14,9 +14,7 @@ export class AdminDetailsComponent implements OnInit {
 
     constructor(private dashboardService: DashboardService,
                 private router: Router) {
-        this.dashboardService.getAllRealEstates().subscribe(
-            result => this.realEstates = result
-        );
+        this.realEstates = this.dashboardService.getAllRealEstates();
     }
 
     ngOnInit() {

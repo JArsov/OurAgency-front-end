@@ -12,7 +12,7 @@ import '../../shared/rxjs-extensions';
 export class DashboardComponent implements OnInit {
     public sliders: Array<any> = [];
     //TODO change this to RealEstate[]
-    realEstates: Object[];
+    realEstates: any[];
     checkedRealEstates: string[];
     typeOfAdvertisment: string[];
     naselbi: string[];
@@ -24,36 +24,38 @@ export class DashboardComponent implements OnInit {
             result => console.log(result)
         );
 
+        this.realEstates = this.dashboardService.getAllRealEstates();
+
         /*this.dashboardService.getAllRealEstates().subscribe(
             result => this.realEstates = result
             );*/
         /*this.sliders.push({
             code: 1,
-            imagePath: 'assets/images/slider1.jpg',
+            imagePath: 'assets/images/house.jpg',
             label: 'Куќа на Водно!',
             text: 'Само оваа недела!!! Куќа на водно за само ',
             oldPrice: 67000,
             newPrice: 60000
         }, {
             code: 2,
-            imagePath: 'assets/images/slider2.jpg',
+            imagePath: 'assets/images/stan.jpg',
             label: 'Стан во центар',
             text: 'Се продава стан во центар со одличен поглед кон ...',
             oldPrice: 55000,
             newPrice: 51999
         }, {
             code: 3,
-            imagePath: 'assets/images/slider3.jpg',
+            imagePath: 'assets/images/deloven1.jpg',
             label: 'Деловен простор во Илинден',
             text: 'Се издава деловен простор во населба Илинден',
             oldPrice: 230,
             newPrice: 200
         });*/
 
-        /*for(var i = 0 ; i < this.realEstates.length; i++)
+        for(var i = 0 ; i < this.realEstates.length; i++)
         {
             this.sliders.push(this.realEstates[i]);
-        }*/
+        }
 
         this.checkedRealEstates = [
             'kukja',

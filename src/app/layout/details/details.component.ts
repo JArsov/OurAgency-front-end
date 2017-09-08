@@ -19,10 +19,10 @@ export class DetailsComponent implements OnInit {
     constructor(private route: ActivatedRoute,
                 private router: Router,
                 private dashboardService: DashboardService) {
-        this.dashboardService.getAllRealEstates()
-            .subscribe(
+        this.realEstates = this.dashboardService.getAllRealEstates();
+            /*.subscribe(
                 result => this.realEstates = result
-            );
+            );*/
         this.currentIndex = 0;
     }
 

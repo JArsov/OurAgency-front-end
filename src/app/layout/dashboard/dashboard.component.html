@@ -117,7 +117,7 @@
         <tbody>
         <tr *ngFor="let realEstate of realEstates">
             <td class="text-center">
-                <img [src]="realEstate.imagePath" class="img-thumbnail img-responsive img-table"/>
+                <a [routerLink]="['/details/' + realEstate.code]"><img [src]="realEstate.imagePath" class="img-thumbnail img-responsive img-table"/></a>
             </td>
             <td class="text-center">
                 <label *ngIf="realEstate.location != 'Скопје'">{{realEstate.location}}</label>
